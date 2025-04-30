@@ -69,6 +69,7 @@ struct KeplerApp: App {
             .frame(width: 1024, height: 750)  // 高度减去标题栏
            .environmentObject(router)
         }
+        .windowStyle(.hiddenTitleBar)
         .modelContainer(sharedModelContainer)
     }
 }

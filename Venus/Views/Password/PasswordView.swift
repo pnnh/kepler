@@ -24,6 +24,7 @@ struct PSPasswordView: View {
             
             Text(password)
         }
+        .modifier(IgnoreSafeArea(apply: true))
         .frame(
           minWidth: 0,
           maxWidth: .infinity,
@@ -36,8 +37,20 @@ struct PSPasswordView: View {
  
 }
 
-
-#Preview {
-    PSPasswordView()
-        .modelContainer(for: Item.self, inMemory: true)
+struct IgnoreSafeArea : ViewModifier {
+    var apply: Bool
+    
+    @ViewBuilder func body(content: Content) -> some View {
+        if apply {
+            content.ignoresSafeArea()
+        } else {
+            content
+        }
+    }
 }
+
+//
+//#Preview {
+//    PSPasswordView()
+//        .modelContainer(for: Item.self, inMemory: true)
+//}
