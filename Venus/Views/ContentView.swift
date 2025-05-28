@@ -77,11 +77,11 @@ struct ContentView: View {
                 }
             }
             Spacer()
-            HStack{
-                Image(nsImage: NSImage(contentsOfFile: "Documents/zhe.jpg")!).resizable().scaledToFit().frame(width: 150.0, height: 150.0)
-                
-            }
-            Spacer()
+//            HStack{
+//                Image(nsImage: NSImage(contentsOfFile: "Documents/zhe.jpg")!).resizable().scaledToFit().frame(width: 150.0, height: 150.0)
+//                
+//            }
+//            Spacer()
         }
         
         //        Text("Helsssaaa我今天没吃饭lo, Worlsssssd22222!")

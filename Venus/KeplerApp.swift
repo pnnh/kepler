@@ -1,11 +1,14 @@
 import Cocoa
 import SwiftUI
+import AppKit
 import MTKepler
 import Logging
 import SwiftData
 
 @main
 struct KeplerApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
 //    var window: PSMainWindow!
 
 
@@ -55,7 +58,7 @@ struct KeplerApp: App {
                        PSMainView().navigationBarBackButtonHidden(true)
                    case .files:
                        PSFilesView().navigationBarBackButtonHidden(true)
-                   case .notes(let owner):
+                   case .notes(_):
                        PSNotesView(ownerName: "xxxNotes").navigationBarBackButtonHidden(true)
                    case .images:
                        PSImageView().navigationBarBackButtonHidden(true)
@@ -71,5 +74,33 @@ struct KeplerApp: App {
         }
         .windowStyle(.hiddenTitleBar)
         .modelContainer(sharedModelContainer)
+    }
+}
+
+class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    var window: NSWindow!
+    
+    func applicationDidFinishLaunching(_ notification: Notification) {
+     
+        window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 1024, height: 768),
+            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            backing: .buffered, defer: false)
+        
+        window.center()
+        window.title = "Venus"
+        
+        window.titlebarAppearsTransparent = true
+        window.titleVisibility = .hidden
+        
+        let toolbar = NSToolbar(identifier: "VenusToolbar")
+        window.toolbar = toolbar
+        
+        let contentView = ContentView()
+        window.contentViewController = NSHostingController(rootView: contentView)
+        
+        window.makeKeyAndOrderFront(nil)
+        
     }
 }
