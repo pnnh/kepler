@@ -54,18 +54,14 @@ struct KeplerApp: App {
                 PSMainView()
                .navigationDestination(for: Router.Destination.self) { destination in
                    switch destination {
-                   case .home:
-                       PSMainView().navigationBarBackButtonHidden(true)
                    case .files:
                        PSFilesView().navigationBarBackButtonHidden(true)
                    case .notes(_):
                        PSNotesView(ownerName: "xxxNotes").navigationBarBackButtonHidden(true)
                    case .images:
                        PSImageView().navigationBarBackButtonHidden(true)
-                   case .password:
-                       PSPasswordView().navigationBarBackButtonHidden(true)
-                   case .uuid:
-                       PSUUIDView().navigationBarBackButtonHidden(true)
+                   default:
+                       PSMainView().navigationBarBackButtonHidden(true)
                    }
                }
            }.padding(0)
@@ -79,28 +75,28 @@ struct KeplerApp: App {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    var window: NSWindow!
+//    var window: NSWindow!
     
     func applicationDidFinishLaunching(_ notification: Notification) {
      
-        window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 1024, height: 768),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        
-        window.center()
-        window.title = "Venus"
-        
-        window.titlebarAppearsTransparent = true
-        window.titleVisibility = .hidden
-        
-        let toolbar = NSToolbar(identifier: "VenusToolbar")
-        window.toolbar = toolbar
-        
-        let contentView = ContentView()
-        window.contentViewController = NSHostingController(rootView: contentView)
-        
-        window.makeKeyAndOrderFront(nil)
+//        window = NSWindow(
+//            contentRect: NSRect(x: 0, y: 0, width: 1024, height: 768),
+//            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+//            backing: .buffered, defer: false)
+//        
+//        window.center()
+//        window.title = "Venus"
+//        
+//        window.titlebarAppearsTransparent = true
+//        window.titleVisibility = .hidden
+//        
+//        let toolbar = NSToolbar(identifier: "VenusToolbar")
+//        window.toolbar = toolbar
+//        
+//        let contentView = ContentView()
+//        window.contentViewController = NSHostingController(rootView: contentView)
+//        
+//        window.makeKeyAndOrderFront(nil)
         
     }
 }

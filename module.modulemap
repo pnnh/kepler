@@ -2,8 +2,8 @@ module MTKepler {
 	header "kepler/logger/logger.h"
 	header "quark/services/logger/logger.h"
 	header "quark/services/random/random.h"
-	header "quark/types/color.h"
-	header "quark/types/uuid.h"
+	header "quark/core/graphics/color.h"
+	header "quark/core/uuid/uuid.h"
 	header "quark/business/filesystem/file.h"
 
     export *

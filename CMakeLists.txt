@@ -32,7 +32,12 @@ set(Boost_USE_MULTITHREADED ON)
 
 set(LIB_NAME "MTKepler")
 
-file(GLOB_RECURSE KEPLER_SOURCES kepler/*.cpp quark/*.cpp)
+file(GLOB_RECURSE KEPLER_SOURCES
+        kepler/*.cpp
+        quark/core/*.cpp
+        quark/infra/*.cpp
+        quark/services/*.cpp)
+
 add_library(${LIB_NAME} ${KEPLER_SOURCES} module.modulemap)
 
 # 查找并引用日志库
