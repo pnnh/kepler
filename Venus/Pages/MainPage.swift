@@ -18,6 +18,49 @@ struct PSMainPage: View {
                         }
                 }
             }
+            GridRow {
+                VStack {
+                    Image(.images)
+                    Text("打开笔记库")
+                        .onTapGesture {
+                            print("Double tapped!2")
+                            
+                            
+                            let openPanel = NSOpenPanel()
+                            openPanel.allowsMultipleSelection = false
+                            openPanel.canChooseDirectories = true
+                            openPanel.canChooseFiles = true
+                            openPanel.showsHiddenFiles = false
+                            openPanel.message = "本应用需要访问该目录，请点击允许按钮"
+                            openPanel.prompt = "允许"
+                            openPanel.directoryURL = URL.init(string: NSHomeDirectory())
+
+                            if openPanel.runModal() == NSApplication.ModalResponse.OK {
+                                if let selectedURL = openPanel.url {
+                                    let selectedPath = selectedURL.path
+                                    print("Selected directory: \(selectedPath)")
+                                    
+                                    router.navigate(to: .notes(owner: selectedPath))
+                                }
+                            } else {
+                                print("User canceled the selection")
+                            }
+                            
+                            
+                            
+                        }
+                }
+            }
+            GridRow {
+                VStack {
+                    Image(.images)
+                    Text("打开文件夹")
+                        .onTapGesture {
+                            print("Double tapped!3")
+                            router.navigate(to: .images)
+                        }
+                }
+            }
         }
         
         .toolbar { 
@@ -29,7 +72,7 @@ struct PSMainPage: View {
                 }
             }
         }.toolbarBackground(Color.green)
-        .padding(0)
+        .padding()
         .frame(width: 1024, height: 768)
     }
 }

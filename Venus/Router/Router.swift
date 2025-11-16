@@ -1,5 +1,7 @@
 import Foundation
 import SwiftUI
+
+@Observable
 final class Router: ObservableObject {
     
     public enum Destination: Codable, Hashable {
@@ -11,7 +13,7 @@ final class Router: ObservableObject {
         case uuid
     }
     
-    @Published var navPath = NavigationPath()
+     var navPath = NavigationPath()
     
     func navigate(to destination: Destination) {
         navPath.append(destination)

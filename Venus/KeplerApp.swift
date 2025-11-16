@@ -37,8 +37,8 @@ struct KeplerApp: App {
                         switch destination {
                         case .files:
                             PSFilesView().navigationBarBackButtonHidden(true)
-                        case .notes(_):
-                            PSNotesView(ownerName: "xxxNotes")
+                        case .notes(let owner):
+                            PSNotesPage(ownerName: owner)
                                 .navigationBarBackButtonHidden(true)
                         case .images:
                             PSImagePage().navigationBarBackButtonHidden(true)
@@ -47,9 +47,16 @@ struct KeplerApp: App {
                         }
                     }
             }.padding(0)
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity,
+                    minHeight: 0,
+                    maxHeight: .infinity,
+                    alignment: .topLeading
+                )
                 .environmentObject(router)
+                .background(Color.gray)
         }
-//        .windowResizability(.contentSize)
         .defaultSize(width: 1024, height: 768)
         .windowStyle(.hiddenTitleBar)
         .modelContainer(sharedModelContainer)

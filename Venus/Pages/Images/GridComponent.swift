@@ -6,38 +6,6 @@ struct ImagesGridComponent: View {
     @State var active: (Int, Int) = (0, 0)
     @ObservedObject var viewModel: SharedViewModel = SharedViewModel()
      
-    
-    func loadImages()->[ImageModel] {
-        var images: [ImageModel] = []
-            print("ImagesGridComponent init: \(viewModel.selectedImagePath ?? "default value")")
-            if let selectedPath = viewModel.selectedImagePath, !selectedPath.isEmpty {
-            
-                let directoryURL = URL(fileURLWithPath: selectedPath)
-                let imageFiles = getImageFileURLs(in: directoryURL)
-                for file in imageFiles {
-                    let imageModel = ImageModel(Path: file.path, Text: "新")
-                    images.append(imageModel)
-                    print("Loaded image file: \(file.path)")
-                }
-                
-            } else {
-                images.append(ImageModel(Path: "/Users/Larry/Pictures/bear.jpg", Text: "新"))
-                images.append(ImageModel(Path: "/Users/Larry/Pictures/dog.png", Text: "新"))
-                images.append(ImageModel(Path: "/Users/Larry/Pictures/cplus.jpg", Text: "新"))
-                print("No valid selectedImagePath, loaded default images.")
-            }
-        return images
-    }
-     
-    func getColumns() -> [GridItem] {
-        print("getColumns called: \(viewModel.selectedImagePath ?? "default value")")
-        var cols: [GridItem] = []
-        for _ in 0..<6 {
-            cols.append(GridItem(.flexible()))
-        }
-        return cols
-    }
-
     var body: some View {
 
         ScrollView {
@@ -57,10 +25,52 @@ struct ImagesGridComponent: View {
                             )
                     )
                 }
-            }
-            .padding()
-        }
+                Spacer()
+            }.background(Color.red)
+            .padding(0)
+            Spacer()
+        }.frame(
+            minWidth: 0,
+            maxWidth: .infinity,
+            minHeight: 0,
+            maxHeight: .infinity,
+            alignment: .topLeading
+        )
+        .padding(0)
+        .background(Color.brown)
     }
+    
+   
+   func loadImages()->[ImageModel] {
+       var images: [ImageModel] = []
+           print("ImagesGridComponent init: \(viewModel.selectedImagePath ?? "default value")")
+           if let selectedPath = viewModel.selectedImagePath, !selectedPath.isEmpty {
+           
+               let directoryURL = URL(fileURLWithPath: selectedPath)
+               let imageFiles = getImageFileURLs(in: directoryURL)
+               for file in imageFiles {
+                   let imageModel = ImageModel(Path: file.path, Text: "新")
+                   images.append(imageModel)
+                   print("Loaded image file: \(file.path)")
+               }
+               
+           } else {
+               images.append(ImageModel(Path: "/Users/Larry/Pictures/bear.jpg", Text: "新"))
+               images.append(ImageModel(Path: "/Users/Larry/Pictures/dog.png", Text: "新"))
+               images.append(ImageModel(Path: "/Users/Larry/Pictures/cplus.jpg", Text: "新"))
+               print("No valid selectedImagePath, loaded default images.")
+           }
+       return images
+   }
+    
+   func getColumns() -> [GridItem] {
+       print("getColumns called: \(viewModel.selectedImagePath ?? "default value")")
+       var cols: [GridItem] = []
+       for _ in 0..<6 {
+           cols.append(GridItem(.flexible()))
+       }
+       return cols
+   }
 
 }
 
@@ -164,7 +174,7 @@ struct ImageCard: View {
                         Image(nsImage: nsImg.Image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)  //.background(Color.pink)
-                            .frame(maxWidth: .infinity)  //.border(Color.gray, width: 0.5)
+//                            .frame(maxWidth: .infinity)  //.border(Color.gray, width: 0.5)
                         //.frame(width: nsImg.width, height: nsImg.height)
 
                     }.buttonStyle(EmptyButtonStyle())

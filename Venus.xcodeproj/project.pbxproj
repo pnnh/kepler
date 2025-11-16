@@ -35,7 +35,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		463413002CDB120F00EE94E8 /* Windows */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Windows; sourceTree = "<group>"; };
 		463413042CDB13BB00EE94E8 /* Services */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Services; sourceTree = "<group>"; };
 		4634130C2CDB15E700EE94E8 /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
 		4634130D2CDB15F500EE94E8 /* Pages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Pages; sourceTree = "<group>"; };
@@ -99,7 +98,6 @@
 				4634130D2CDB15F500EE94E8 /* Pages */,
 				4634130C2CDB15E700EE94E8 /* Models */,
 				463413042CDB13BB00EE94E8 /* Services */,
-				463413002CDB120F00EE94E8 /* Windows */,
 				46EE3C16254B142000EC17BB /* KeplerApp.swift */,
 				46EE3C1A254B142200EC17BB /* Assets.xcassets */,
 				46EE3C1F254B142200EC17BB /* Main.storyboard */,
@@ -134,7 +132,6 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				463413002CDB120F00EE94E8 /* Windows */,
 				463413042CDB13BB00EE94E8 /* Services */,
 				4634130C2CDB15E700EE94E8 /* Models */,
 				4634130D2CDB15F500EE94E8 /* Pages */,

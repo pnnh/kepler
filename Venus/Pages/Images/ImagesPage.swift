@@ -7,20 +7,16 @@ struct PSImagePage: View {
     @StateObject private var viewModel = SharedViewModel()
 
     var body: some View {
-        VStack {
-            ImagesGridComponent(viewModel: viewModel)
-        }
-        .frame(
-//            minWidth: 0,
-//            maxWidth: .infinity,
-//            minHeight: 0,
-//            maxHeight: .infinity,
-            alignment: .topLeading
-        )
-        .padding(0).background(Color.blue)
+        
+            ImagesGridComponent(viewModel: viewModel).frame(
+                minWidth: 0,
+                maxWidth: .infinity,
+                minHeight: 0,
+                maxHeight: .infinity,
+                alignment: .topLeading
+            ).background(Color.blue)
 
         .toolbar {
-            // Use a ToolbarItemGroup instead of placing a Spacer inside the toolbar closure
             ToolbarItemGroup {
                 Button {
 
