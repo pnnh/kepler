@@ -57,6 +57,7 @@ struct KeplerApp: App {
                 .environmentObject(router)
                 .background(Color.gray)
         }
+//        .windowResizability(.contentMinSize)
         .defaultSize(width: 1024, height: 768)
         .windowStyle(.hiddenTitleBar)
         .modelContainer(sharedModelContainer)

@@ -62,7 +62,15 @@ struct PSMainPage: View {
                 }
             }
         }
-        
+        .padding(0)
+        .frame(
+            minWidth: 0,
+            maxWidth: .infinity,
+            minHeight: 0,
+            maxHeight: .infinity,
+            alignment: .topLeading
+        )
+        .background(Color.orange)
         .toolbar { 
             ToolbarItemGroup {
                 Button {
@@ -72,8 +80,6 @@ struct PSMainPage: View {
                 }
             }
         }.toolbarBackground(Color.green)
-        .padding()
-        .frame(width: 1024, height: 768)
     }
 }
 
