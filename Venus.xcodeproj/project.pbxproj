@@ -38,7 +38,7 @@
 		463413002CDB120F00EE94E8 /* Windows */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Windows; sourceTree = "<group>"; };
 		463413042CDB13BB00EE94E8 /* Services */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Services; sourceTree = "<group>"; };
 		4634130C2CDB15E700EE94E8 /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
-		4634130D2CDB15F500EE94E8 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+		4634130D2CDB15F500EE94E8 /* Pages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Pages; sourceTree = "<group>"; };
 		4673A5702D1BE6C4001BF929 /* Router */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Router; sourceTree = "<group>"; };
 		4673A5892D1BF94F001BF929 /* Components */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Components; sourceTree = "<group>"; };
 		46CB5C122CEB718D00525A0C /* Assets */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Assets; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 				4673A5702D1BE6C4001BF929 /* Router */,
 				4673A56F2D1BE5A3001BF929 /* Venus.entitlements */,
 				46CB5C122CEB718D00525A0C /* Assets */,
-				4634130D2CDB15F500EE94E8 /* Views */,
+				4634130D2CDB15F500EE94E8 /* Pages */,
 				4634130C2CDB15E700EE94E8 /* Models */,
 				463413042CDB13BB00EE94E8 /* Services */,
 				463413002CDB120F00EE94E8 /* Windows */,
@@ -137,7 +137,7 @@
 				463413002CDB120F00EE94E8 /* Windows */,
 				463413042CDB13BB00EE94E8 /* Services */,
 				4634130C2CDB15E700EE94E8 /* Models */,
-				4634130D2CDB15F500EE94E8 /* Views */,
+				4634130D2CDB15F500EE94E8 /* Pages */,
 				4673A5702D1BE6C4001BF929 /* Router */,
 				4673A5892D1BF94F001BF929 /* Components */,
 				46CB5C122CEB718D00525A0C /* Assets */,
@@ -167,7 +167,7 @@
 				};
 			};
 			buildConfigurationList = 46EE3C0E254B142000EC17BB /* Build configuration list for PBXProject "Venus" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -408,7 +408,7 @@
 					"\"$(SRCROOT)/build/macos/Debug\"",
 					/usr/lib/swift,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lspdlog",
@@ -461,7 +461,7 @@
 					"\"$(SRCROOT)/build/macos/Debug\"",
 					/usr/lib/swift,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-lspdlog",
