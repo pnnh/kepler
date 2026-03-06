@@ -1,8 +1,12 @@
-cmake_minimum_required(VERSION 3.28...3.31)
+cmake_minimum_required(VERSION 3.28...4.1)
 
 project(Kepler VERSION 0.1.0 LANGUAGES C CXX)
 
-enable_language(OBJC OBJCXX Swift)
+if (APPLE)
+    enable_language(OBJC OBJCXX Swift)
+    set(CMAKE_Swift_LANGUAGE_VERSION 6)
+    set(CMAKE_Swift_FLAGS "-strict-concurrency=complete")
+endif ()
 
 # 设置语言标准
 set(CMAKE_C_STANDARD 17)
